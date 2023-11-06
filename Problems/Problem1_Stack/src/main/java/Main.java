@@ -2,7 +2,7 @@ package Problems.Problem1_Stack.src.main.java;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayListStack myStack = new ArrayListStack();
+        ArrayListStack<Integer> myStack = new ArrayListStack<>();
         System.out.println("isEmpty: " + myStack.isEmpty());
         myStack.push(1000);
         myStack.push(1234);

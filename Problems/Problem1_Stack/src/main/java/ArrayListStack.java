@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 /**
  * ArrayListStack is a simple implementation of a stack data structure using an ArrayList.
- * It allows you to push and pop integer elements onto/from the stack.
+ * It allows you to push and pop T elements onto/from the stack.
  */
-public class ArrayListStack {
-    private ArrayList<Integer> stack; // The underlying data structure to store stack elements.
+public class ArrayListStack<T> {
+    private final ArrayList<T> stack; // The underlying data structure to store stack elements.
     private int topIndex; // The index of the top element in the stack.
 
     /**
@@ -21,22 +21,22 @@ public class ArrayListStack {
     /**
      * Pushes an integer onto the top of the stack.
      *
-     * @param num The integer to be pushed onto the stack.
+     * @param item The item to be pushed onto the stack.
      */
-    public void push(int num) {
-        stack.add(num);
+    public void push(T item) {
+        stack.add(item);
         topIndex++;
     }
 
     /**
-     * Pops and returns the top integer from the stack.
+     * Pops and returns the top Item from the stack.
      *
-     * @return The top integer from the stack, or -1 if the stack is empty.
+     * @return The top Item from the stack, or null if the stack is empty.
      */
-    public int pop() {
-        int popped = -1;
+    public T pop() {
+        T popped = null;
         if (isEmpty()) {
-            System.out.println("Stack is empty. Cannot pop elements. Returning '-1'.");
+            System.out.println("Stack is empty. Cannot pop elements. Returning 'null'.");
         } else {
             popped = stack.remove(topIndex);
             topIndex--;
@@ -46,11 +46,11 @@ public class ArrayListStack {
     }
 
     /**
-     * Peeks and returns the top integer from the stack without removing it.
+     * Peeks and returns the top Item from the stack without removing it.
      *
-     * @return The top integer from the stack, or -1 if the stack is empty.
+     * @return The top Item from the stack, or 'null'' if the stack is empty.
      */
-    public int peek() {
+    public T peek() {
         return stack.get(topIndex);
     }
 
