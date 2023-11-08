@@ -1,9 +1,9 @@
 package Problems.Problem3_SinglyLinkedList.src.main.java;
 
 public class SinglyLinkedList<T> {
-    private Node<T> head;
+    private SinglyNode<T> head;
 
-    public SinglyLinkedList(Node<T> head) {
+    public SinglyLinkedList(SinglyNode<T> head) {
         this.head = head;
     }
     public SinglyLinkedList() {
@@ -11,11 +11,11 @@ public class SinglyLinkedList<T> {
     }
 
     public void insert(T data) {
-        Node<T> newNode = new Node<>(data);
+        SinglyNode<T> newNode = new SinglyNode<>(data);
         if (this.head == null) {
             this.head = newNode;
         } else {
-            Node<T> currentNode = this.head;
+            SinglyNode<T> currentNode = this.head;
             while (currentNode.getNext() != null) {
                 currentNode = currentNode.getNext();
             }
@@ -31,8 +31,8 @@ public class SinglyLinkedList<T> {
             this.head = this.head.getNext();
             return;
         }
-        Node<T> currentNode = this.head;
-        while(currentNode.getNext().getData() != targetData && currentNode.getNext() != null) {
+        SinglyNode<T> currentNode = this.head;
+        while(currentNode.getNext() != null && currentNode.getNext().getData() != targetData) {
             currentNode = currentNode.getNext();
         }
         if (currentNode.getNext() != null) {
@@ -42,7 +42,7 @@ public class SinglyLinkedList<T> {
     }
 
     public void display() {
-        Node<T> currentNode = this.head;
+        SinglyNode<T> currentNode = this.head;
         while(currentNode != null) {
             System.out.println(currentNode);
             currentNode = currentNode.getNext();

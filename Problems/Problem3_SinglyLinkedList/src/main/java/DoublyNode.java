@@ -1,21 +1,21 @@
 package Problems.Problem3_SinglyLinkedList.src.main.java;
 
-public class Node<T> {
+public class DoublyNode<T> {
     private T data;
-    private Node<T> next;
-    private Node<T> prev;
+    private DoublyNode<T> next;
+    private DoublyNode<T> prev;
 
-    public Node(T data) {
+    public DoublyNode(T data) {
         this.data = data;
         this.next = null;
         this.prev = null;
     }
 
-    public Node<T> getPrev() {
+    public DoublyNode<T> getPrev() {
         return prev;
     }
 
-    public void setPrev(Node<T> prev) {
+    public void setPrev(DoublyNode<T> prev) {
         this.prev = prev;
     }
 
@@ -27,21 +27,28 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node<T> getNext() {
+    public DoublyNode<T> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(DoublyNode<T> next) {
         this.next = next;
     }
 
     @Override
     public String toString() {
-        if (next != null) {
-            return data + " -> " + next.data;
+        if (this.next != null) {
+            if (this.prev != null) {
+                return this.prev.data + " <- " + data + " -> " + this.next.data;
+            } else {
+                return "null <- " + data + " -> " + this.next.data;
+            }
         } else {
-            return data + " -> null";
+            if (this.prev != null) {
+                return this.prev.data + " <- " + data + " -> null";
+            } else {
+                return "null <- " + data + " -> null";
+            }
         }
     }
-
 }

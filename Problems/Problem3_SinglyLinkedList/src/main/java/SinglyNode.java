@@ -1,22 +1,12 @@
 package Problems.Problem3_SinglyLinkedList.src.main.java;
 
-public class Node<T> {
+public class SinglyNode<T> {
     private T data;
-    private Node<T> next;
-    private Node<T> prev;
+    private SinglyNode<T> next;
 
-    public Node(T data) {
+    public SinglyNode(T data) {
         this.data = data;
         this.next = null;
-        this.prev = null;
-    }
-
-    public Node<T> getPrev() {
-        return prev;
-    }
-
-    public void setPrev(Node<T> prev) {
-        this.prev = prev;
     }
 
     public T getData() {
@@ -27,11 +17,11 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node<T> getNext() {
+    public SinglyNode<T> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(SinglyNode<T> next) {
         this.next = next;
     }
 
